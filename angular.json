@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "BankiFrontend"
+  "defaultProject": "BankiFrontend",
+  "cli": {
+    "analytics": false
+  }
 }

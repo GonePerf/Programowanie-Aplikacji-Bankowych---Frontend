@@ -1,0 +1,52 @@
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nazwa odbiorcy</th>
+      <th scope="col">Numer konta</th>
+      <th scope="col">Tytuł</th>
+      <th scope="col">Typ</th>
+      <th scope="col">Kwota</th>
+      <th scope="col">Data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of history | async">
+      <th scope="row">1</th>
+      <td>{{ item.name }}</td>
+      <td>{{ item.account_number }}</td>
+      <td>{{ item.title }}</td>
+      <td>{{ item.transfer_type }}</td>
+      <td>{{ item.transfer_amount }}</td>
+      <td>{{ item.transfer_date }}</td>
+    </tr>
+    <!-- <tr>
+      <th scope="row">1</th>
+      <td>Jan Kowalski</td>
+      <td>-</td>
+      <td>-</td>
+      <td>Wpłata</td>
+      <td>100 zł</td>
+      <td>2020-12-30  7:30</td>
+    </tr>
+    <tr>
+      <th scope="row">1</th>
+      <td>Marek Kondrat</td>
+      <td>54103021761236457137600000</td>
+      <td>Za ziemnioki</td>
+      <td>Obciążenie</td>
+      <td>100 zł</td>
+      <td>2020-12-30  7:30</td>
+    </tr>
+    <tr>
+      <th scope="row">1</th>
+      <td>Jan Kowalski</td>
+      <td>-</td>
+      <td>-</td>
+      <td>Wypłata</td>
+      <td>100 zł</td>
+      <td>2020-12-30  7:30</td>
+    </tr> -->
+  </tbody>
+</table>

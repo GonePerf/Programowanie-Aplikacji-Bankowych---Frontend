@@ -1,0 +1,28 @@
+<ul class="list-group" *ngIf="client">
+    <li class="list-group-item">Nazwa: <b>{{ client.name }}</b> </li>
+    <li class="list-group-item">Numer konta: <b>{{ client.account_number }}</b> </li>
+    <li class="list-group-item">Email: <b>{{ client.email }}</b> </li>
+    <li class="list-group-item">Numer telefonu: <b>{{ client.phone_number }}</b> </li>
+    <li class="list-group-item">Bilans: <b>{{ client.balance }}zł</b> </li>
+    <li class="list-group-item">
+      <form>
+        <div class="form-group">
+          <input type="number" class="form-control" id="exampleInputEmail1" name="amount" placeholder="Kwota" [(ngModel)]="depositAmount.amount">
+          <b class="text-center">{{depositInfo}}</b>
+        </div>
+        <!-- <button type="submit" class="btn btn-primary">Wpłać</button> -->
+        <a class="nav-link" href="#" type="submit" (click)="deposit()">Wpłać</a>
+      </form>
+      
+    </li>
+    <li class="list-group-item">
+      <form>
+        <div class="form-group">
+          <input type="number" class="form-control" id="exampleInputEmail1" name="amount" placeholder="Kwota" [(ngModel)]="withdrawAmount.amount">
+          <b class="text-center">{{withdrawInfo}}</b>
+        </div>
+        <!-- <button type="submit" class="btn btn-primary">Wpłać</button> -->
+        <a class="nav-link" href="#" type="submit" (click)="withdraw()">Wypłać</a>
+      </form>
+    </li>
+</ul>

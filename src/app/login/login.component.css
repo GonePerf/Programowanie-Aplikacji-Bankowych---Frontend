@@ -1,0 +1,25 @@
+.alert{
+    margin: 5vh auto 10px auto;
+    width: 50%;
+}
+.input-group-text{
+    width: 130px;
+}
+a{
+    border-radius: 30px;
+    margin: 10px;
+    transition: 0.2s;
+    text-align: center;
+    background-color: white;
+    border: 1px solid  #343a40;
+    color: #343a40;
+}
+a:hover{
+    color: white;
+    border: 1px solid white;
+    background-color: #343a40;
+    transition: 0.2s;
+}
+h6{
+    color: red;
+}

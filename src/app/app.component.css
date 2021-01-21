@@ -1,0 +1,33 @@
+app-user-info{
+    position: fixed;
+    right: 20px;
+    width: 15vw;
+    top: 70px;
+    transition: 0.4s;
+
+}
+app-info{
+    position: fixed;
+    width: 15vw;
+    left: 20px;
+    top: 70px;
+    transition: 0.4s;
+}
+app-login{
+    transition: 0.4s;
+}
+.container{
+    margin-top: 100px;
+}
+a{
+    color: white;
+    border: 1px solid white;
+    border-radius: 30px;
+    margin: 10px;
+    transition: 0.2s;
+}
+a:hover{
+    background-color: white;
+    color: #343a40;
+    transition: 0.2s;
+}
