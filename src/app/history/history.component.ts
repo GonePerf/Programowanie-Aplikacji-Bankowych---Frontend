@@ -19,14 +19,14 @@ export class HistoryComponent implements OnInit {
     if(this.client.email == 'bankb@xd.pl'){
       this.history = this.api.getAllHistory();
       this.isMain = true;
-      
+
     }
     else{
       this.history = this.api.getHistory(this.client.account_id);
     }
-      
+
   }
-  showTranswerType(a: string){
+  showTransferType(a: string){
     if(a == 'Obciążenie'){
       return true;
     }
