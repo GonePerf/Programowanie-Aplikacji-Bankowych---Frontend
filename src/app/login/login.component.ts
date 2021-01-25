@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   name: string;
   tel: string;
 
-    
+
   constructor(private api: ApiService) { }
 
   ngOnInit(): void {
@@ -41,13 +41,12 @@ export class LoginComponent implements OnInit {
   onRegister(){
     if(this.isValid() && (this.tel.toString().length == 9)){
       let newClient = new NewClient;
-      newClient.address = this.adres;
+      newClient.name_and_address = this.name + ' ' + this.adres;
       newClient.email = this.emailReg;
-      newClient.name = this.name;
       newClient.phone_number = this.tel;
       return this.api.addClient(newClient).subscribe(
         () => alert('Konto założone pomyślnie'),
-        err => this.registerError = 'Wprowadzono błędne dane!', 
+        err => this.registerError = 'Wprowadzono błędne dane!',
       );
     }else{
       this.registerError = 'Wprowadzono błędne dane!'
@@ -71,19 +70,14 @@ export class LoginComponent implements OnInit {
       alert('Wprowadź email!')
     } else{
       this.obs_client = this.api.login(this.emailLog);
-      let zalogowany = new Client;
       try{
-        this.obs_client.subscribe(data => zalogowany = data, err => alert('Nie znaleziono użytkownika'));
-        if(zalogowany.name != null){
-          alert('Pomyślnie zalogowano');
-          this.client.emit(zalogowany);
-        }
+        this.obs_client.subscribe(data => {this.client.emit(data); }, err => alert('Nie znaleziono użytkownika'));
       }catch(error){
         alert('Błąd!')
       }
-      
+
     }
-    
+
   }
 
 }

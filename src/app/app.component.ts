@@ -12,6 +12,7 @@ export class AppComponent implements OnInit{
   login = false;
   transfer = false;
   loggedIn = false;
+  isMainBankAccount = false;
   @Input()
   client: Client;
   constructor(private api: ApiService){}
@@ -24,11 +25,17 @@ export class AppComponent implements OnInit{
     this.client = client;
     this.actionTransfer();
     this.loggedIn = true;
+    if(this.client.email === 'bankb@xd.pl') this.isMainBankAccount = true;
+  }
+
+  synchronize(){
+    this.api.synchronize().subscribe( () => alert("Realizacja przelewów z jednostką rozliczeniową przebiegła pomyślnie"), err => alert("Komunikacja z jednostką rozliczeniową nie powiodła się"));
   }
 
   logout(){
     this.client = null;
     this.loggedIn = false;
+    this.isMainBankAccount = false;
     this.actionLogin();
   }
 

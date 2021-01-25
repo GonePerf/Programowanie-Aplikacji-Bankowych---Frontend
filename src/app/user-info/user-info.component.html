@@ -1,5 +1,5 @@
 <ul class="list-group" *ngIf="client">
-    <li class="list-group-item">Nazwa: <b>{{ client.name }}</b> </li>
+    <li class="list-group-item">Nazwa: <b>{{ client.name_and_address }}</b> </li>
     <li class="list-group-item">Numer konta: <b>{{ client.account_number }}</b> </li>
     <li class="list-group-item">Email: <b>{{ client.email }}</b> </li>
     <li class="list-group-item">Numer telefonu: <b>{{ client.phone_number }}</b> </li>
@@ -13,7 +13,7 @@
         <!-- <button type="submit" class="btn btn-primary">Wpłać</button> -->
         <a class="nav-link" href="#" type="submit" (click)="deposit()">Wpłać</a>
       </form>
-      
+
     </li>
     <li class="list-group-item">
       <form>

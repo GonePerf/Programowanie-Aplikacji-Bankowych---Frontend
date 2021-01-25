@@ -32,10 +32,10 @@ export class UserInfoComponent implements OnInit {
       this.depositInfo = '';
       return this.api.deposit(this.depositAmount).subscribe(
         () => alert('Wpłacono pomyślnie'),
-        err => alert('Błąd'), 
+        err => alert('Błąd'),
       );
     }
-    
+
   }
   withdraw(){
 
@@ -47,9 +47,9 @@ export class UserInfoComponent implements OnInit {
       this.withdrawInfo = '';
       return this.api.withdraw(this.withdrawAmount).subscribe(
         () => alert('Wypłacono pomyślnie'),
-        err => alert('Błąd'), 
+        err => alert('Błąd'),
       );
     }
-    
+
   }
 }

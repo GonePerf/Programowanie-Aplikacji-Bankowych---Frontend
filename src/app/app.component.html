@@ -3,10 +3,13 @@
     <a class="nav-link" href="#" (click)="actionLogin()">Użytkownik</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#" (click)="actionTransfer()">Nowy przelew</a>
+    <a class="nav-link" *ngIf="loggedIn" href="#" (click)="actionTransfer()">Nowy przelew</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#" (click)="actionHistory()">Historia transakcji</a>
+    <a class="nav-link" href="#" *ngIf="loggedIn" (click)="actionHistory()">Historia transakcji</a>
+  </li>
+  <li class="nav-item" *ngIf="isMainBankAccount">
+    <a class="nav-link" href="#" (click)="synchronize()">Synchronizuj</a>
   </li>
   <li class="nav-item" *ngIf="client">
     <a class="nav-link" href="#" (click)="logout()">Wyloguj</a>
@@ -14,7 +17,7 @@
 </ul>
 <app-info></app-info>
 <div class="container" >
-  <app-history [hidden]="!history" [client]="client"></app-history>
+  <app-history *ngIf="loggedIn" [hidden]="!history" [client]="client"></app-history>
   <app-login  [hidden]="!login" (client)="emited($event)"></app-login>
   <app-przelew [hidden]="!transfer" [client]="client"></app-przelew>
 </div>

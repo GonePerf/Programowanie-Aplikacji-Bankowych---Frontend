@@ -21,7 +21,7 @@ export class PrzelewComponent implements OnInit {
   constructor(public api: ApiService) { }
 
   ngOnInit(): void {
-    
+
   }
   isValid(){
     if(this.recipient_address == null || this.recipient_name == null || this.recipient_number == null || this.title == null || this.transfer_amount == null){
@@ -33,25 +33,24 @@ export class PrzelewComponent implements OnInit {
   }
 
   sendTransfer(){
-    if(this.isValid() && (this.recipient_number.toString().length == 3)){
+    if(this.isValid()){
       let transfer = new NewTransfer;
       transfer.account_id = this.client.account_id;
-      transfer.recipient_address = this.recipient_address;
-      transfer.recipient_name = this.recipient_name;
+      transfer.recipient_name_and_address = this.recipient_name + ' ' + this.recipient_address;
       transfer.recipient_number = this.recipient_number;
       transfer.title = this.title;
       transfer.transfer_amount = this.transfer_amount;
       this.error = '';
       return this.api.newTransfer(transfer).subscribe(
         () => alert('Wysłano pomyślnie'),
-        err => this.error = 'Błąd', 
+        err => this.error = 'Błąd',
       );
     }
     else{
       this.error = 'Wprowadzono błędne dane!';
     }
-    
 
-    
+
+
   }
 }

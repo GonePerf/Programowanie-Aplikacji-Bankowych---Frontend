@@ -10,15 +10,13 @@ import { ApiService, Client, Transfer } from '../api.service';
 export class HistoryComponent implements OnInit {
   @Input()
   client: Client;
-  
+
   history: Observable<Transfer[]>;
 
   constructor(private api: ApiService) { }
 
   ngOnInit(): void {
-    if(this.client){
-      this.history = this.api.getHistory(this.client.id);
-    }
+      this.history = this.api.getHistory(this.client.account_id);
   }
 
 }
