@@ -29,6 +29,9 @@ export class ApiService {
   getHistory(id: number){
     return this.http.get<Transfer[]>(`${this.baseUrl}/transaction/account/${id}`);
   }
+  getAllHistory(){
+    return this.http.get<Transfer[]>(`${this.baseUrl}/transaction/all-transaction`);
+  }
 
   synchronize(){
     return this.http.get<Transfer[]>(`${this.baseUrl}/transaction/synchronization-with-the-accounting-unit`);
@@ -66,8 +69,12 @@ export class NewTransfer{
 }
 export class Transfer{
   transfer_id?: number
-  name_and_address: string
-  account_number: string
+  name_and_address?: string
+  sender_name_and_address?: string
+  sender_number?: string
+  account_number?: string
+  recipient_name_and_address?: string
+  recipient_number?: string
   title: string
   transfer_type: string
   transfer_amount: number
