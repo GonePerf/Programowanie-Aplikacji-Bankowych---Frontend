@@ -32,6 +32,9 @@ export class ApiService {
   getAllHistory(){
     return this.http.get<Transfer[]>(`${this.baseUrl}/transaction/all-transaction`);
   }
+  getAllClients(){
+    return this.http.get<Client[]>(`${this.baseUrl}/client/all-client`);
+  }
 
   synchronize(){
     return this.http.get<Transfer[]>(`${this.baseUrl}/transaction/synchronization-with-the-accounting-unit`);

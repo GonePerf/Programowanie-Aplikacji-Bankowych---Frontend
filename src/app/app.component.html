@@ -9,6 +9,9 @@
     <a class="nav-link" href="#" *ngIf="loggedIn" (click)="actionHistory()">Historia transakcji</a>
   </li>
   <li class="nav-item" *ngIf="isMainBankAccount">
+    <a class="nav-link" href="#" (click)="actionClientList()">Lista Klientów</a>
+  </li>
+  <li class="nav-item" *ngIf="isMainBankAccount">
     <a class="nav-link" href="#" (click)="synchronize()">Synchronizuj</a>
   </li>
   <li class="nav-item" *ngIf="client">

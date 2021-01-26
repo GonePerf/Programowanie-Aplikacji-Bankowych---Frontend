@@ -11,6 +11,7 @@ import { InfoComponent } from './info/info.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ClientListComponent } from './client-list/client-list.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     HistoryComponent,
     LoginComponent,
     PrzelewComponent,
-    InfoComponent
+    InfoComponent,
+    ClientListComponent
   ],
   imports: [
     BrowserModule,

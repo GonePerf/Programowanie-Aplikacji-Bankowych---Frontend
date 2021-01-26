@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nazwa i adres</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Numer telefonu</th>
+        <th scope="col">Numer konta</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of clients | async; let i = index">
+      <tr>
+        <th scope="row">{{ i+1 }}</th>
+        <td>{{ item.name_and_address }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.phone_number }}</td>
+        <td>{{ item.account_number }}</td>
+      </tr>
+    </tbody>
+  </table>

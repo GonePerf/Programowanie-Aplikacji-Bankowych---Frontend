@@ -13,6 +13,7 @@ export class AppComponent implements OnInit{
   transfer = false;
   loggedIn = false;
   isMainBankAccount = false;
+  client_list = false;
   @Input()
   client: Client;
   constructor(private api: ApiService){}
@@ -41,16 +42,25 @@ export class AppComponent implements OnInit{
 
   actionHistory(){
     this.login = false;
+    this.client_list = false;
     this.transfer = false;
     this.history = !this.history;
   }
+  actionClientList(){
+    this.login = false;
+    this.transfer = false;
+    this.history = false;
+    this.client_list = !this.client_list;
+  }
   actionLogin(){
+    this.client_list = false;
     this.history = false;
     this.transfer = false;
     this.login = !this.login;
   }
   actionTransfer(){
     this.history = false;
+    this.client_list = false;
     this.login = false;
     this.transfer = !this.transfer;
   }
