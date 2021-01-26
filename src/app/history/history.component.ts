@@ -27,7 +27,7 @@ export class HistoryComponent implements OnInit {
 
   }
   showTransferType(a: string){
-    if(a == 'Obciążenie'){
+    if(a == 'Obciążenie' || a =='Wypłata'){
       return true;
     }
     else {

@@ -23,5 +23,6 @@
   <app-history *ngIf="loggedIn" [hidden]="!history" [client]="client"></app-history>
   <app-login  [hidden]="!login" (client)="emited($event)"></app-login>
   <app-przelew [hidden]="!transfer" [client]="client"></app-przelew>
+  <app-client-list [hidden]="!client_list"></app-client-list>
 </div>
 <app-user-info [client]="client"></app-user-info>

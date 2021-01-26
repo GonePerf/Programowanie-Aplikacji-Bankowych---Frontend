@@ -31,7 +31,11 @@ export class UserInfoComponent implements OnInit {
     }else{
       this.depositInfo = '';
       return this.api.deposit(this.depositAmount).subscribe(
-        () => alert('Wpłacono pomyślnie'),
+        () => {
+          alert('Wpłacono pomyślnie');
+          this.client.balance += this.depositAmount.amount;
+          this.depositAmount.amount = null;
+          },
         err => alert('Błąd'),
       );
     }
@@ -46,7 +50,11 @@ export class UserInfoComponent implements OnInit {
     }else{
       this.withdrawInfo = '';
       return this.api.withdraw(this.withdrawAmount).subscribe(
-        () => alert('Wypłacono pomyślnie'),
+        () => {
+          alert('Wypłacono pomyślnie');
+          this.client.balance -= this.withdrawAmount.amount;
+          this.withdrawAmount.amount = null;
+        },
         err => alert('Błąd'),
       );
     }

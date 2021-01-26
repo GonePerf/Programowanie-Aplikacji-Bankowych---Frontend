@@ -42,7 +42,14 @@ export class PrzelewComponent implements OnInit {
       transfer.transfer_amount = this.transfer_amount;
       this.error = '';
       return this.api.newTransfer(transfer).subscribe(
-        () => alert('Wysłano pomyślnie'),
+        () => {alert('Wysłano pomyślnie');
+          this.client.balance -= transfer.transfer_amount;
+          this.recipient_address = '';
+          this.recipient_name = '';
+          this.recipient_number = '';
+          this.transfer_amount = null;
+          this.title = '';
+        },
         err => this.error = 'Błąd',
       );
     }
